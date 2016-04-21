@@ -23,21 +23,13 @@
         <form name="myForm" ng-controller="addTodoInfo" novalidate>
           <input type="text" name="title" class="form-control" ng-model="todoTitle" placeholder="what do you want to do">
           <br>
-          <textarea class="form-control" rows="8" cols="40" placeholder="describe" ng-model="describe"></textarea>
-          <br>
           <button type="button" class="btn btn-primary" ng-click="addInfo()">添加</button>
           <br>
           <br>
 
           <a href="#" class="list-group-item" ng-repeat="onething in todoList">
             <span class="badge" ng-click="delInfo(onething)">del</span>
-            <h4 class="list-group-item-heading">
-
               {{onething.title}}
-            </h4>
-            <p class="list-group-item-text">
-              {{onething.describe}}
-            </p>
           </a>
         </form>
       </div>
