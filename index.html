@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html ng-app>
   <head>
-    <meta charset="utf-8">
+    <!--width属性控制设备的宽度。假设您的网站将被带有不同屏幕分辨率的设备浏览，那么将它设置为device-width可以确保它能正确呈现在不同的设备上-->
+    <!--initial-scale=1.0确保网页加载时，以1:1的比例呈现，不会有任何的缩放-->
+    <!--user-scalable=no 可以禁用其缩放功能，通常情况下maximum-scale=1.0与user-scalable=no一起使用。。这样禁用缩放功能后，用户只能滚动屏幕-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8">
     <title>todolist</title>
     <script src="js/angular-1.0.1.min.js" charset="utf-8"></script>
     <script src="js/jquery-2.2.0.min.js" charset="utf-8"></script>
@@ -10,14 +13,32 @@
     <script src="js/index.js" charset="utf-8"></script>
   </head>
   <body>
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="true">
-        Dropdown
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" ng-controller="selectCtrl">
-        <li ng-repeat="x in data"><a href="#">{{x}}</a></li>
-      </ul>
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">TODOLIST</a>
+        </div>
+      </nav>
+      <div>
+        <form name="myForm" ng-controller="addTodoInfo" novalidate>
+          <input type="text" name="title" class="form-control" ng-model="todoTitle" placeholder="what do you want to do">
+          <br>
+          <textarea class="form-control" rows="8" cols="40" placeholder="describe" ng-model="describe"></textarea>
+          <br>
+          <button type="button" class="btn btn-primary" ng-click="addInfo()">添加</button>
+          <br>
+          <br>
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat="onething in todoList">
+              <h4 class="list-group-item-heading">{{onething.title}}</h4>
+              <p class="list-group-item-text">
+                {{onething.describe}}
+              </p>
+            </li>
+          </ul>
+        </form>
+      </div>
     </div>
+
+
 </html>

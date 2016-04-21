@@ -1,3 +1,13 @@
-function selectCtrl($scope){
-  $scope.data = ["Action", "Another action", "Something else here", "Separeted link"];
+function addTodoInfo($scope){
+  $scope.todoTitle = "";
+  $scope.describe = "";
+  $scope.todoList = [];
+  $scope.addInfo = function(){
+    if($.trim($scope.todoTitle) != ""){
+      $scope.todoList.push({"title": $scope.todoTitle, "describe": $scope.describe});
+    }
+    $scope.todoTitle = "";
+    $scope.describe = "";
+  }
+
 }
