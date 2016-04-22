@@ -10,7 +10,6 @@ function addTodoInfo($scope){
       var keyArr = keys.split(",");
       $.each(keyArr,function(i,key){
         var oneStr = localStorage.getItem(key);
-        console.log(oneStr);
         if(oneStr){
           var one = JSON.parse(oneStr);
           $scope.todoList.push(one);

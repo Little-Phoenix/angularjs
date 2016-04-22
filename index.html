@@ -27,7 +27,7 @@
           <br>
           <br>
 
-          <a href="#" class="list-group-item" ng-repeat="onething in todoList ">
+          <a href="#" class="list-group-item" ng-repeat="onething in todoList | orderBy:'updateTime'">
             <span ng-show="onething.isDel" class="badge" ng-click="recInfo(onething)">rec</span>
             <span ng-show="onething.isDel" style="color:#c7c7c7">{{onething.title}}</span>
 
