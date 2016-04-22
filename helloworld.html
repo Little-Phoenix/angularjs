@@ -130,5 +130,12 @@
         <li ng-repeat="x in counts">{{x | myFormat}}</li>
       </ul>
     </div>
+
+    <div ng-controller="testTodo">
+
+      <ul >
+        <li ng-repeat="x in todoList | orderBy:'age'">{{x.name}}</li>
+      </ul>
+    </div>
   </body>
 </html>
