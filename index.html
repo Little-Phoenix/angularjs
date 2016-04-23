@@ -27,13 +27,29 @@
           <br>
           <br>
 
-          <a href="#" class="list-group-item" ng-repeat="onething in todoList | orderBy:'updateTime'">
-            <span ng-show="onething.isDel" class="badge" ng-click="recInfo(onething)">rec</span>
-            <span ng-show="onething.isDel" style="color:#c7c7c7">{{onething.title}}</span>
+          <div class="panel-group">
+            <div class="panel panel-default" >
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordin" href="#collapseOne">
+                    2016-4-23
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <a href="#" class="list-group-item" ng-repeat="onething in todoList | orderBy:'updateTime'">
+                    <span ng-show="onething.isDel" class="badge" ng-click="recInfo(onething)">rec</span>
+                    <span ng-show="onething.isDel" style="color:#c7c7c7">{{onething.title}}</span>
 
-            <span ng-show="onething.isRec" class="badge" ng-click="delInfo(onething)">del</span>
-            <span ng-show="onething.isRec" style="color:black">{{onething.title}}</span>
-          </a>
+                    <span ng-show="onething.isRec" class="badge" ng-click="delInfo(onething)">del</span>
+                    <span ng-show="onething.isRec" style="color:black">{{onething.title}}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
         </form>
       </div>
