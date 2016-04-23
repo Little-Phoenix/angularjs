@@ -26,6 +26,7 @@ function addTodoInfo($scope){
                  "createTime": currentTime,
                  "updateTime": currentTime,
                  "key": currentTime.getTime()};
+
       $scope.todoList.push(one);
 
       var keys = localStorage.getItem("keys");
